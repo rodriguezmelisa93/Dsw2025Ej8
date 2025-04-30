@@ -9,10 +9,10 @@ namespace Dsw2025Ej8.Domain
     //public class CajaDeAhorro : Cuenta{
     //      private decimal _tasaDeInteres;
 
-    //      public CajaDeAhorro(string numero, decimal saldo, string[] titulares, decimal tasaDeIntereses )
+    //      public CajaDeAhorro(string numero, decimal saldo, string[] titulares, decimal tasaDeInteres )
     //         : base(numero,saldo,titulares)
     //      {   
-    //            _tasaDeIntereses = tasaDeInteres;
+    //            _tasaDeInteres = tasaDeInteres;
     //       }
 
     // G y S

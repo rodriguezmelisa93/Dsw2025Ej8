@@ -11,6 +11,32 @@ public class CuentaBancaria
     private decimal _comision;
     private string[] _titulares;
 
+
+    //public abstract class CuentaBancaria{
+    //
+    //private string _numero;
+    //private decimal _saldo;
+    //private Estado _estado;
+    //private string[] _titulares;
+
+   // public CuentaBancaria(string numero, decimal saldo, string[] titulares){
+   //_numero = numero;
+   //_saldo = saldo;
+   //_estado = Estado.Activa;
+   //_titulares = titulares;
+   // }
+
+    // GETTERS Y SETTERS 
+    // public string GetNumero() => _numero;
+    // public decimal GetSaldo() => _saldo;
+    // public Estado GetEstado() => _estado;
+    // public void SetEstado (Estado estado) => _estado = estado;
+    // public string [] GetTitulares () => _titulares;
+
+    // public abstract void Depositar(decimal monto);
+    // public abtsract void Retirar(decimal monto)
+    //}
+
     public CuentaBancaria(string numero, decimal saldo, TipoCuenta tipo, string[] titulares)
     {
         _numero = numero;

@@ -11,7 +11,7 @@ public class CuentaBancaria
     private decimal _comision;
     private string[] _titulares;
 
-
+    
     //public abstract class CuentaBancaria{
     //
     //private string _numero;
@@ -19,11 +19,13 @@ public class CuentaBancaria
     //private Estado _estado;
     //private string[] _titulares;
 
-   // public CuentaBancaria(string numero, decimal saldo, string[] titulares){
-   //_numero = numero;
-   //_saldo = saldo;
-   //_estado = Estado.Activa;
-   //_titulares = titulares;
+   // public CuentaBancaria(string numero, decimal saldo){
+
+   // _numero = numero;
+   // _saldo = saldo;
+   // _estado = Estado.Activa;
+   // _titulares = titulares; 
+
    // }
 
     // GETTERS Y SETTERS 

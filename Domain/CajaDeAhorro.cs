@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dsw2025Ej8.Domain
 {
-    //public class CajaDeAhorro : Cuenta{
+    //public class CajaDeAhorro : CuentaBancaria{
     //      private decimal _tasaDeInteres;
 
     //      public CajaDeAhorro(string numero, decimal saldo, string[] titulares, decimal tasaDeInteres )

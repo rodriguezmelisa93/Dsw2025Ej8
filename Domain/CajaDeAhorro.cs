@@ -6,31 +6,31 @@ using System.Threading.Tasks;
 
 namespace Dsw2025Ej8.Domain
 {
-    //public class CajaDeAhorro : CuentaBancaria{
-    //      private decimal _tasaDeInteres;
+   public class CajaDeAhorro : CuentaBancaria{
+          private decimal _tasaDeInteres;
 
-    //      public CajaDeAhorro(string numero, decimal saldo, string[] titulares, decimal tasaDeInteres )
-    //         : base(numero,saldo,titulares)
-    //      {   
-    //            _tasaDeInteres = tasaDeInteres;
-    //       }
+         public CajaDeAhorro(string numero, decimal saldo, decimal tasaDeInteres )
+             : base(numero,saldo)
+          {   
+               _tasaDeInteres = tasaDeInteres;
+           }
 
-    // G y S
-    //public decimal GetTasaDeInteres() => _tasaDeInteres;
-   // public void SetTasaDeInteres(decimal tasaDeInteres) => _tasaDeInteres = tasaDeInteres;
+    // G y S 
 
+    public decimal TasaDeInteres { get; init; }
+  
 
-    // public void Depositar(decimal monto){
-    //
-    // }
-    // public void Retirar(decimal monto){
-    //
-    // }
+     public override void Depositar(decimal monto){
+    
+     }
+     public override void Retirar(decimal monto){
+    
+     }
 
-    // public void AplicarIntereses(){
-    //
-    // }
+     public void AplicarIntereses(){
+    
+    }
 
-    // 
-    //}
+     
+    }
 }

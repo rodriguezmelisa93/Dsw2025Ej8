@@ -1,45 +1,43 @@
 ﻿namespace Dsw2025Ej8.Domain;
 
-public class CuentaBancaria
-{
-    private TipoCuenta _tipo;
-    private string _numero;
-    private decimal _saldo;
-    private Estado _estado;
-    private decimal _tasaDeInteres;
-    private decimal _limiteDeDescubierto;
-    private decimal _comision;
-    private string[] _titulares;
-
-    
-    //public abstract class CuentaBancaria{
-    //
+    // private TipoCuenta _tipo; Y AQUI Q ONDA?
     //private string _numero;
     //private decimal _saldo;
     //private Estado _estado;
+    //private decimal _tasaDeInteres;
+    //private decimal _limiteDeDescubierto;
+    //private decimal _comision;
     //private string[] _titulares;
 
-   // public CuentaBancaria(string numero, decimal saldo){
+    
+  
+    public abstract class CuentaBancaria
+{
+    private string _numero;
+    private decimal _saldo;
+    private Estado _estado;// como quedaria estado??
+    private string[]? _titulares;
 
-   // _numero = numero;
-   // _saldo = saldo;
-   // _estado = Estado.Activa;
-   // _titulares = titulares; 
+    public  CuentaBancaria(string numero, decimal saldo)
+    {
+        _numero = numero;
+        _saldo = saldo;
+        _estado = Domain.Estado.Activa; // aqui pq me sale domain estado?
+    }
 
-   // }
+    //gys pasados a propiedades
 
-    // GETTERS Y SETTERS 
-    // public string GetNumero() => _numero;
-    // public decimal GetSaldo() => _saldo;
-    // public Estado GetEstado() => _estado;
-    // public void SetEstado (Estado estado) => _estado = estado;
-    // public string [] GetTitulares () => _titulares;
+    public string Numero { get; } 
+    public decimal Saldo { get; }
+    public decimal Estado { get; set; } // aqui sigue asi ya q no borre la enum estado
+    public string[]? Titulares { get; set; } //checar este, donde uso los titulares?
+    
 
-    // public abstract void Depositar(decimal monto);
-    // public abtsract void Retirar(decimal monto)
-    //}
+     public abstract void Depositar(decimal monto);
+     public abstract void Retirar(decimal monto);
+    }
 
-    public CuentaBancaria(string numero, decimal saldo, TipoCuenta tipo, string[] titulares)
+    /* public CuentaBancaria(string numero, decimal saldo, TipoCuenta tipo, string[] titulares)
     {
         _numero = numero;
         _saldo = saldo;
@@ -146,5 +144,5 @@ public class CuentaBancaria
         {
             _saldo += _saldo * _tasaDeInteres;
         }
-    }
-}
+    } /*
+

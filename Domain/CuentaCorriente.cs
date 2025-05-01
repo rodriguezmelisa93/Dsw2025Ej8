@@ -6,35 +6,28 @@ using System.Threading.Tasks;
 
 namespace Dsw2025Ej8.Domain
 {
-  //  public class CuentaCorriente : CuentaBancaria{
-  //
-  //    private decimal _limiteDeDescubierto;
-  //    private decimal _comision;
-  //
-  //    public CuentaCorriente(string numero, decimal saldo, string [] titulares, decimal limiteDeDescubierto, decimal comision)
-  //      : base(numero, saldo, titulares)
-  //      {
-  //        _limiteDeDescubierto = limiteDeDescubierto;
-  //        _comision = comision;
-  //      }
-  //    
-  //  GyS
-  //   public decimal GetLimiteDeDescubierto() => _limiteDeDescubierto;
-  //   public void SetLimiteDeDescubierto(decimal limiteDeDescubierto) => _limiteDeDescubierto = limiteDeDescubierto;
-  //   public decimal GetComision () => _comision;
-  //   public void SetComision (decimal comision) => _comision = comision;
+    internal class CuentaCorriente : CuentaBancaria
+    {
 
-  //   aqui irian los otros metodos q pediria la tarea
- //     public void Depositar(decimal monto)
-//      { 
-//      }
-//      public void Retirar (decimal monto)
- //      {
- //
- //      }
-//
+        private decimal LimiteDeDescubierto { get; set; }
+        private decimal Comision { get; set; }
+        public CuentaCorriente(string numero, decimal saldo) : base(numero, saldo)
+        {
+        }
+
+      
 
 
+ 
+       
+        //   aqui irian los otros metodos q pediria la tarea
+        public override void Depositar(decimal monto)
+        {
+        }
+        public override void Retirar(decimal monto)
+        {
 
-  // }
+
+        }
+    }
 }

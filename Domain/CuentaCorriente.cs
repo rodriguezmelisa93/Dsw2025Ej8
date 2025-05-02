@@ -54,7 +54,7 @@ namespace Dsw2025Ej8.Domain;
             }
             
             if (!(EstadoDeCuenta == Estado.Activa))
-                throw new Exepciones("No se puede operar con la cuenta {estado} (reemplazar por el estado en el que se encuentra)");
+                throw new Exepciones($"No se puede operar con la cuenta {EstadoDeCuenta }");
 
             if (Saldo > 0)
             {

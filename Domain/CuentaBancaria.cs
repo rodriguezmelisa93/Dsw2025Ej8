@@ -2,19 +2,17 @@
 
  abstract class CuentaBancaria{
 
-    private string _numero;
-    private decimal _saldo;
+    public string Numero { get; private set; }
+    public decimal Saldo { get; private set; } 
     public Estado EstadoDeCuenta { get; set; }
   
     public string[] Titulares { get; set; }
   
 
-
-
      public CuentaBancaria(string numero, decimal saldo){
 
-       _numero = numero;
-       _saldo = saldo;
+        Numero = numero;
+        Saldo = saldo;
 
      }
     public abstract void Depositar(decimal monto);

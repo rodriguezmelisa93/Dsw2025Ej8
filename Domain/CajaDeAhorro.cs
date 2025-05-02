@@ -6,31 +6,86 @@ using System.Threading.Tasks;
 
 namespace Dsw2025Ej8.Domain
 {
-    //public class CajaDeAhorro : CuentaBancaria{
-    //      private decimal _tasaDeInteres;
 
-    //      public CajaDeAhorro(string numero, decimal saldo, string[] titulares, decimal tasaDeInteres )
-    //         : base(numero,saldo,titulares)
-    //      {   
-    //            _tasaDeInteres = tasaDeInteres;
-    //       }
+   public class CajaDeAhorro : CuentaBancaria{
 
-    // G y S
-    //public decimal GetTasaDeInteres() => _tasaDeInteres;
-   // public void SetTasaDeInteres(decimal tasaDeInteres) => _tasaDeInteres = tasaDeInteres;
+    public decimal TasaDeInteres { get; init; }
+  
+
+           public CajaDeAhorro(string numero, decimal saldo ): base(numero,saldo)
+          {   
+             
+          }
+
+ 
 
 
-    // public void Depositar(decimal monto){
-    //
-    // }
-    // public void Retirar(decimal monto){
-    //
-    // }
 
-    // public void AplicarIntereses(){
-    //
-    // }
 
-    // 
-    //}
+     public override void Depositar(decimal monto){
+            try
+            {
+                if (monto <= 0)
+                {
+                    throw new Exepciones("El monto ingresado no es válido para la operación solicitada");
+                }
+
+                if (!(EstadoDeCuenta == Estado.Activa))
+                throw new Exepciones($"No se puede operar con la cuenta {EstadoDeCuenta} ");
+
+            this.Saldo += monto;
+            } catch (Exepciones ex) {
+                ex.ErrorCritico();
+            }
+          
+
+     }
+     public override void Retirar(decimal monto){
+            try
+            {
+                if (monto <= 0)
+                {
+                    throw new Exepciones("El monto ingresado no es válido para la operación solicitada");
+                }
+
+                if (!(EstadoDeCuenta == Estado.Activa))
+                    throw new Exepciones("No se puede operar con la cuenta {estado} (reemplazar por el estado en el que se encuentra)");
+                if (Saldo > 0)
+                {
+                    Saldo -= monto;
+                }
+                else
+                {
+                    EstadoDeCuenta = Estado.Suspendida;
+                    throw new Exepciones("La cuenta no cuenta con saldo para la operación solicitada. Fue suspendida.");
+                   
+                }
+
+            }
+            catch (Exepciones ex) {
+                ex.ErrorCritico();
+            }
+
+          
+             
+        }
+
+        public void AplicarIntereses()
+        {
+            try
+            {
+
+                if (!(EstadoDeCuenta == Estado.Activa))
+                    throw new Exepciones($"No se puede operar con la cuenta {EstadoDeCuenta} (reemplazar por el estado en el que se encuentra)");
+
+                Saldo += Saldo * TasaDeInteres;
+            }
+            catch (Exepciones ex){
+                ex.ErrorCritico();
+            }
+        }
+       
+
+
+    }
 }

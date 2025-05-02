@@ -1,4 +1,6 @@
-﻿using Dsw2025Ej8.Domain;
+
+﻿using System.Security.Cryptography.X509Certificates;
+using Dsw2025Ej8.Domain;
 
 namespace Dsw2025Ej8
 {
@@ -6,13 +8,14 @@ namespace Dsw2025Ej8
     {
         static void Main(string[] args)
         {
-            /*
-            CajaDeAhorro cba = new CajaDeAhorro("id12", 123M)
-            {
 
-                Titulares= new string[] { "uwu", "paquito" }
-            };
-            */
+
+            Presentacion.Inicio();
+         
+
+
+
+
         }
     }
 }

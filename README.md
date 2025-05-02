@@ -1,6 +1,7 @@
 # Ejercicio N° 8
 ## Desarrollo de Software
 ### Herencia y propiedades
+#### Alumno: Sangini Lucas ; Rodriguez Melisa Vanina ; Ovejero Mariana
 
 1. Realizar una bifurcación (fork) del [repositorio](https://github.com/ing-software-frt-utn/dsw2025ej8)
 2. Crear una rama de larga duración development

@@ -12,7 +12,7 @@ namespace Dsw2025Ej8.Domain
         public static void Main()
         {
            // var cuenta = new CajaDeAhorro("123",45567,2);
-           // var cuenta1 = new CuentaCorriente("789",1200000,12, 12);
+           // var cuenta3 = new CuentaCorriente("789",1200000,12, 12);
          }
     }
 }

@@ -1,6 +1,5 @@
 ﻿namespace Dsw2025Ej8.Domain;
 
-<<<<<<< HEAD
     // private TipoCuenta _tipo; Y AQUI Q ONDA?
     //private string _numero;
     //private decimal _saldo;
@@ -29,7 +28,7 @@
     //gys pasados a propiedades
 
     public string Numero { get; } 
-    public decimal Saldo { get; }
+    public decimal Saldo { get; private set; }
     public decimal Estado { get; set; } // aqui sigue asi ya q no borre la enum estado
     public string[]? Titulares { get; set; } //checar este, donde uso los titulares?
     
@@ -178,5 +177,3 @@
 =======
     }
     */
-}
->>>>>>> f250fe2178befd2821e09195d509ec790385a6ce

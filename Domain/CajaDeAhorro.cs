@@ -6,61 +6,86 @@ using System.Threading.Tasks;
 
 namespace Dsw2025Ej8.Domain
 {
-<<<<<<< HEAD
+
    public class CajaDeAhorro : CuentaBancaria{
-          private decimal _tasaDeInteres;
-
-         public CajaDeAhorro(string numero, decimal saldo, decimal tasaDeInteres )
-             : base(numero,saldo)
-          {   
-               _tasaDeInteres = tasaDeInteres;
-           }
-
-    // G y S 
-=======
-    internal class CajaDeAhorro : CuentaBancaria{
-
-        private decimal TasaDeInteres { get; set; }
-        public CajaDeAhorro(string numero, decimal saldo) : base(numero, saldo)
-        {
-            
-
-        }
->>>>>>> f250fe2178befd2821e09195d509ec790385a6ce
 
     public decimal TasaDeInteres { get; init; }
   
 
-<<<<<<< HEAD
+           public CajaDeAhorro(string numero, decimal saldo ): base(numero,saldo)
+          {   
+             
+          }
+
+ 
+
+
+
+
      public override void Depositar(decimal monto){
-    
+            try
+            {
+                if (monto <= 0)
+                {
+                    throw new Exepciones("El monto ingresado no es válido para la operación solicitada");
+                }
+
+                if (!(EstadoDeCuenta == Estado.Activa))
+                throw new Exepciones($"No se puede operar con la cuenta {EstadoDeCuenta} ");
+
+            this.Saldo += monto;
+            } catch (Exepciones ex) {
+                ex.ErrorCritico();
+            }
+          
+
      }
      public override void Retirar(decimal monto){
-    
-     }
+            try
+            {
+                if (monto <= 0)
+                {
+                    throw new Exepciones("El monto ingresado no es válido para la operación solicitada");
+                }
 
-     public void AplicarIntereses(){
-    
-    }
+                if (!(EstadoDeCuenta == Estado.Activa))
+                    throw new Exepciones("No se puede operar con la cuenta {estado} (reemplazar por el estado en el que se encuentra)");
+                if (Saldo > 0)
+                {
+                    Saldo -= monto;
+                }
+                else
+                {
+                    EstadoDeCuenta = Estado.Suspendida;
+                    throw new Exepciones("La cuenta no cuenta con saldo para la operación solicitada. Fue suspendida.");
+                   
+                }
 
-     
-=======
-        // G y S
-        //public decimal GetTasaDeInteres() => _tasaDeInteres;
-        // public void SetTasaDeInteres(decimal tasaDeInteres) => _tasaDeInteres = tasaDeInteres;
+            }
+            catch (Exepciones ex) {
+                ex.ErrorCritico();
+            }
 
+          
+             
+        }
 
-       public override void Depositar(decimal monto){
-      
-       }
-       public override void Retirar(decimal monto){
-      
-       }
-       public void AplicarIntereses(){
-      
-       }
+        public void AplicarIntereses()
+        {
+            try
+            {
+
+                if (!(EstadoDeCuenta == Estado.Activa))
+                    throw new Exepciones($"No se puede operar con la cuenta {EstadoDeCuenta} (reemplazar por el estado en el que se encuentra)");
+
+                Saldo += Saldo * TasaDeInteres;
+            }
+            catch (Exepciones ex){
+                ex.ErrorCritico();
+            }
+        }
        
 
->>>>>>> f250fe2178befd2821e09195d509ec790385a6ce
+
     }
 }
